@@ -219,6 +219,8 @@ Error message and password prompt
 
 <li>$:/GitHub/Username</li>
 
+<li>$:/Import</li>
+
 <li>$:/isEncrypted</li>
 
 <li>$:/kookma/macro/dbadge</li>
@@ -234,6 +236,8 @@ Error message and password prompt
 <li>$:/palette</li>
 
 <li>$:/pluginlibrary/tobibeer/official</li>
+
+<li>$:/plugins/danielo515/2click2edit</li>
 
 <li>$:/plugins/kookma/favorites</li>
 
@@ -325,11 +329,19 @@ Error message and password prompt
 
 <li>$:/view</li>
 
+<li>Asperges vertes grillées et filets de saumon à la crème d’avocat</li>
+
+<li>badge</li>
+
 <li>Bananes rôties au jambon cru</li>
 
 <li>Blanquette de veau facile</li>
 
 <li>Blondie</li>
+
+<li>Boulettes de Crevettes Dorées Croustillantes (Genshin Impact)</li>
+
+<li>Boulettes végétariennes</li>
 
 <li>Brick au thon et au poireau</li>
 
@@ -338,6 +350,8 @@ Error message and password prompt
 <li>Clarifier le beurre (ghee ou ghi Indien)</li>
 
 <li>Conseils nutrition</li>
+
+<li>Côte à l'os et chutney de poivrons</li>
 
 <li>Crevettes au curry express</li>
 
@@ -357,6 +371,10 @@ Error message and password prompt
 
 <li>Feuilletés roulés au thon</li>
 
+<li>flocons de bonite</li>
+
+<li>Glace à la banane</li>
+
 <li>Index</li>
 
 <li>Kanban</li>
@@ -374,6 +392,8 @@ Error message and password prompt
 <li>Nuggets de poulet faciles</li>
 
 <li>Optimiser les repas pour une bonne santé</li>
+
+<li>Paksoï grillé, croustillants d’oignons, boulettes veggie et sauce cantonaise</li>
 
 <li>Pizza gaufrée au fromage</li>
 
@@ -434,6 +454,8 @@ Error message and password prompt
 <li>Style Videos</li>
 
 <li>tags</li>
+
+<li>Takoyaki</li>
 
 <li>task-control</li>
 
@@ -10487,8 +10509,13 @@ To use in other wikis, drag and drop this link to those wikis: [[Kookma Plugin L
 <div created="20201112221014456" modified="20210320172937679" title="$:/GitHub/Repo">
 <pre>tiddlycook/tiddlycook.github.io</pre>
 </div>
-<div created="20201112220827768" modified="20210320173136513" title="$:/GitHub/Username">
+<div created="20201112220827768" modified="20210420200307795" title="$:/GitHub/Username">
 <pre>tiddlycook</pre>
+</div>
+<div status="complete" title="$:/Import">
+<pre>Les tiddlers suivants ont été importés :
+
+# [[$:/plugins/danielo515/2click2edit]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
@@ -14456,6 +14483,28 @@ Mohammad Rahmani: https://github.com/kookma
 <div bag="default" caption="Official Plugin Library by Tobias Beer" modified="20160120132137178" modifier="Tobias Beer" revision="0" tags="$:/tags/PluginLibrary" title="$:/pluginlibrary/tobibeer/official" url="http://tobibeer.github.io/tw5-plugins/library/index.html">
 <pre>The plugin library for the latest and greatest plugins from [ext[tobibeer/plugins|http://tobibeer.github.io/tw5-plugins]]; officially released versions of plugins by [ext[tobibeer|https://github.com/tobibeer]].</pre>
 </div>
+<div author="Danielo Rodriguez" bag="default" core-version="&gt;=5.1.0" dependents="" description="double click to edit tiddlers" list="readme" plugin-type="plugin" revision="0" source="https://github.com/danielo515/TW5-2click2edit" title="$:/plugins/danielo515/2click2edit" type="application/json" version="0.1">
+<pre>{
+    &quot;tiddlers&quot;: {
+        &quot;$:/plugins/danielo515/2click2edit/ClickListener.js&quot;: {
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/plugins/danielo515/2click2edit/ClickListener.js\ntype: application/javascript\nmodule-type: widget\n\nThis widgets adds an double click event listener to its parent\n\n\\*/\n\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nvar Widget = require(\&quot;$:/core/modules/widgets/widget.js\&quot;).widget;\n\nvar ClickListener = function(parseTreeNode,options) {\n\tthis.initialise(parseTreeNode,options);\n};\n\n/*\nInherit from the base widget class\n*/\nClickListener.prototype = new Widget();\n\n/*\nRender this widget into the DOM\n*/\nClickListener.prototype.render = function(parent,nextSibling) {\n\tthis.parentDomNode = parent;\n\tthis.execute();\n\tvar self = this;\n    /*Since the event listener have been added to the parent, the \&quot;this\&quot; property is pointing to the\n    wrong object, we should call our edit function with our widget object set as the this property.*/\n    parent.addEventListener(\&quot;dblclick\&quot;,function(event){self.editTiddler.call(self,event)});\n};\n\nClickListener.prototype.editTiddler = function(event) {\n    this.dispatchEvent({type: \&quot;tm-edit-tiddler\&quot;, param: this.getVariable(\&quot;currentTiddler\&quot;)});    \n};\n\n/*\nCompute the internal state of the widget\n*/\nClickListener.prototype.execute = function() {\n};\n\n/*\nSelectively refreshes the widget if needed. Returns true if the widget or any of its children needed re-rendering\n*/\nClickListener.prototype.refresh = function(changedTiddlers) {\n\treturn false;\n};\n\nexports.click = ClickListener;\n\n})();&quot;,
+            &quot;title&quot;: &quot;$:/plugins/danielo515/2click2edit/ClickListener.js&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;,
+            &quot;module-type&quot;: &quot;widget&quot;
+        },
+        &quot;$:/plugins/danielo515/2click2edit/readme&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/danielo515/2click2edit/readme&quot;,
+            &quot;text&quot;: &quot;This plugin adds the ability to edit tiddlers by double clicking on its body.\nJust try to edit any tiddler shown here by double clicking on it.\n\nThis can be considered a fast solution. It is only to fill the gap until TiddlyWiki adds support \nfor it officially.\n&quot;
+        },
+        &quot;$:/plugins/danielo515/2click2edit/ui/ViewTemplate&quot;: {
+            &quot;tags&quot;: &quot;$:/tags/ViewTemplate&quot;,
+            &quot;title&quot;: &quot;$:/plugins/danielo515/2click2edit/ui/ViewTemplate&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;$click&gt;&quot;
+        }
+    }
+}</pre>
+</div>
 <div author="Mohammad Rahmani" core-version="&gt;=5.1.22" dependents="" description="Favorites" list="readme history license" plugin-type="plugin" source="https://github.com/kookma/TW-Favorites" title="$:/plugins/kookma/favorites" type="application/json" version="4.4.0">
 <pre>{
     &quot;tiddlers&quot;: {
@@ -15577,8 +15626,8 @@ Mohammad Rahmani: https://github.com/kookma
 <div created="20210319002024498" modified="20210319002304618" title="$:/state/addplugins/tab-1342078386">
 <pre>$:/config/OfficialPluginLibrary</pre>
 </div>
-<div created="20210201015607790" creator="utilisateur" modified="20210319114912458" modifier="utilisateur" title="$:/state/advancedsearch/currentTab">
-<pre>$:/core/ui/AdvancedSearch/Standard</pre>
+<div created="20210201015607790" creator="utilisateur" modified="20210412001238853" modifier="utilisateur" title="$:/state/advancedsearch/currentTab">
+<pre>$:/core/ui/AdvancedSearch/System</pre>
 </div>
 <div created="20210319002016332" modified="20210319002017829" title="$:/state/plugin-info--906510658-$:/plugins/tiddlywiki/codemirror--1798174986">
 <pre>readme</pre>
@@ -15589,14 +15638,14 @@ Mohammad Rahmani: https://github.com/kookma
 <div created="20210126154220717" modified="20210126154220717" title="$:/state/ShowPaletteEditor">
 <pre>yes</pre>
 </div>
-<div created="20210318234428352" creator="utilisateur" modified="20210320172914814" modifier="utilisateur" title="$:/state/sidebar">
+<div created="20210318234428352" creator="utilisateur" modified="20210420200301285" modifier="utilisateur" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
 <div created="20210201135311658" creator="utilisateur" modified="20210319002308735" modifier="utilisateur" title="$:/state/tab--1418380610">
 <pre>$:/core/ui/ControlPanel/Plugins/Add/Plugins</pre>
 </div>
-<div created="20210201015607791" creator="utilisateur" modified="20210319114912458" modifier="utilisateur" title="$:/state/tab--1498284803">
-<pre>$:/core/ui/AdvancedSearch/Standard</pre>
+<div created="20210201015607791" creator="utilisateur" modified="20210412001238853" modifier="utilisateur" title="$:/state/tab--1498284803">
+<pre>$:/core/ui/AdvancedSearch/System</pre>
 </div>
 <div created="20210126154209893" modified="20210127000905359" title="$:/state/tab--1963855381">
 <pre>$:/themes/tiddlywiki/vanilla/themetweaks</pre>
@@ -15613,8 +15662,8 @@ Mohammad Rahmani: https://github.com/kookma
 <div created="20210115195113476" modified="20210116192140361" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
 </div>
-<div created="20210115195813582" creator="user" modified="20210320153302374" modifier="user" title="$:/state/tab/sidebar--595412856">
-<pre>$:/plugins/kookma/favorites/sidebar-tab</pre>
+<div created="20210115195813582" creator="user" modified="20210420200303017" modifier="user" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Open</pre>
 </div>
 <div created="20210127000723467" modified="20210127000902974" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/EditToolbar</pre>
@@ -15625,7 +15674,7 @@ Mohammad Rahmani: https://github.com/kookma
 <div created="20210201132301785" creator="u" modified="20210319001407349" modifier="utilisateur" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div created="20210320173048338" list="$:/ControlPanel Index" modified="20210320173132939" title="$:/StoryList">
+<div created="20210420200303771" list="$:/ControlPanel Index" modified="20210420200303771" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210305114140941" creator="user" modified="20210305114145733" modifier="user" tags="TW5" title="$:/tags/TextEditor/Snippet">
@@ -15753,6 +15802,71 @@ Mohammad Rahmani: https://github.com/kookma
 <div created="20201129043801427" modified="20201129043801427" title="$:/view">
 <pre>classic</pre>
 </div>
+<div created="20210417163002881" modified="20210417163733459" tags="[[plat principal]]" title="Asperges vertes grillées et filets de saumon à la crème d’avocat">
+<pre>^^//
+source : https://www.carrefour.be/fr/recettes/weekend/poisson/asperges-vertes-grillees-et-filets-de-saumon-a-la-creme-d-avocat.html
+//^^
+
+[img width=300px [https://www.carrefour.be/content/dam/carrefour/recettes/2021-04/asperges-vertes-filets-saumon-cr%C3%A8me-avocat.jpg/_jcr_content/renditions/cq5dam.thumbnail.690.345.jpg]]
+
+''Temps total'' : 65 min
+
+&lt;&lt;&lt;
+Préparation : 35 min
+&lt;br&gt;Repos : -
+&lt;br&gt;Cuisson : 30 min
+&lt;&lt;&lt;
+
+;Ingrédient (4 personnes)
+* Jeunes oignons 2
+* Pommes de terre grenailles 400 g.
+* Asperges vertes 600 g.
+* Gousses d’ail 2
+* Filets de saumon avec peau 4
+* Sel
+* Poivre
+
+;Pour la crème d'avocat
+* Citron vert
+* Gros piment jalapeño
+* Avocats 2
+* Menthe 1 Poignée
+* Bouquet de coriandre 1
+
+;Pour la vinaigrette
+* Citron vert 1
+* Miel 1 c.à.s
+* Huile d'olive
+
+;Étape 0
+Avant de commencer, râpez le zeste des 2 citrons verts puis pressez-les pour obtenir 60 ml de jus frais. Coupez les jeunes oignons, dans la longueur, en lanières très fines et réservez-les dans un récipient d’eau glacée.
+
+;Étape 1
+Pelez et coupez les pommes de terre en rondelles. Faites-les cuire dans de l’eau bouillante légèrement salée. Préparez la crème d’avocat : faites sauter le jalapeño grossièrement coupé dans de l’huile d’olive pendant 3 min. Mixez la chair des avocats avec 2 c à s de jus de citron vert, le jalapeño, la menthe et la moitié de la coriandre. Salez, poivrez et réservez au frais. Préparez la vinaigrette : émulsionnez le reste du jus de citron vert avec le miel, 1 c à c de zeste de citron vert et 2 c à s d’huile d’olive. Salez et poivrez.
+
+;Étape 2
+Coupez l’extrémité dure des asperges. Pelez et pressez les gousses d’ail. Mélangez-les à un filet d’huile d’olive, du sel et du poivre. Badigeonnez les asperges de cette préparation puis faites-les griller dans une poêle jusqu’à ce qu’elles soient al dente. Salez et poivrez les filets de saumon et faites-les cuire côté peau jusqu’à ce que celle-ci soit dorée et croustillante. Retournez-les et laissez cuire encore 2 min.
+
+;Étape 3
+Répartissez les asperges et les pommes de terre dans les assiettes. Disposez un filet de saumon et nappez-le de vinaigrette au citron vert. Décorez de jeunes oignons et du reste de coriandre puis servez avec la crème d’avocat.
+ 
+!!! Valeurs nutritionnelles
+
+|Composants|Valeurs pour 100g|
+|Energie 	|145 kcal|
+|mat.gr. |	11 g.|
+|glucides |	4.8 g.|
+|dont sucres |	2.1 g.|
+|fibres |	1.6 g.|
+|proteine |	6.6 g. |
+
+
+!!!Quelques mots sur cette recette
+</pre>
+</div>
+<div created="20210412001337852" modified="20210412001339616" title="badge">
+<pre>{{||LTg}}</pre>
+</div>
 <div created="20210319004335456" modified="20210319005615258" tags="entrée [[très facile]] [[bon marché]]" title="Bananes rôties au jambon cru">
 <pre>[img width=300px [https://assets.afcdn.com/recipe/20190924/98712_w600.jpg]]
 
@@ -15867,6 +15981,95 @@ Ajouter les pépites de chocolat et mélanger pour les incorporer dans la pâte.
 
 ;Étape 4
 Verser la préparation dans un moule beurré (d'environ 15 cm de diamète) et parsemer le reste de pépites de chocolat sur le dessus. Lisser légèrement la surface du gâteau avec une maryse. Enfourner 30 minutes.</pre>
+</div>
+<div created="20210406120241967" modified="20210406130336896" tags="recette" title="Boulettes de Crevettes Dorées Croustillantes (Genshin Impact)">
+<pre>^^//
+source : https://www.reddit.com/r/GifRecipes/jptkvx, https://youtu.be/xPQvjC_HSDM
+//^^
+
+[img width=300px [https://wiracarita.com/wp-content/uploads/2021/01/Resep-Golden-Shrimp-Balls-dari-Game-Genshin-Impact-Halaman-all.jpg]]
+
+''Temps total'' :  min
+
+&lt;&lt;&lt;
+Préparation :  min
+&lt;br&gt;Repos : -
+&lt;br&gt;Cuisson :  min
+&lt;&lt;&lt;
+
+;Ingrédient (4 personnes)
+* 25 grosses Crevettes
+* Pommes de terre (longues)
+* Ail en poudre
+* Poivre blanc
+* Sel
+* Vin Shaoxing (peut être remplacé par du whisky)
+* Fécule de maïs
+
+;Ustensiles
+* 
+* 
+* 
+
+
+;Étape 1
+Deveiner et nettoyer les crevettes
+
+;Étape 2
+
+;Étape 3
+
+;Étape 4
+
+;Étape 5
+
+
+!!!Quelques mots sur cette recette
+</pre>
+</div>
+<div created="20210420164108471" modified="20210420164848005" tags="recette" title="Boulettes végétariennes">
+<pre>^^//
+source : https://www.cuisineaz.com/recettes/boulettes-vegetariennes-98641.aspx
+//^^
+
+[img width=300px [https://img.cuisineaz.com/660x660/2017-08-11/i131509-.jpeg]]
+
+''Temps total'' : 2h30 
+
+&lt;&lt;&lt;
+Préparation :  1 h 
+&lt;br&gt;Repos : -
+&lt;br&gt;Cuisson :  1 h 30 min
+&lt;&lt;&lt;
+
+;Ingrédient (4 personnes)
+
+* 1,5	verre de lentilles sèches
+* 5,0	verres d'eau
+* 2,0	cube de bouillon de légumes
+* 3,0	carottes pelées et émincées
+* 2,0	c. à café d'ail en poudre
+* 2,0	feuille de laurier sèche
+* 1/3	de verre de millet ou riz
+* 215,0	g de pain sec
+* 110,0	g de lait d'amande (ou vache)
+* 2,0	bouquet de basilic
+* 110,0	g de parmesan râpé
+
+;Étape 1
+Préparez les lentilles : mettez les lentilles, le millet, les carottes, l'eau et le bouillon dans une casserole. Ajoutez la feuille de laurier et chauffez à feu moyen jusqu'à évaporation. Remuez de temps en temps durant la cuisson. Retirez la feuille de laurier et ajoutez l'ail en poudre. 
+
+;Étape 2
+Dans un saladier, émiettez le pain et le faites-le ramollir avec le lait. Ajoutez les lentilles, le basilic et le parmesan. Mixez avec un mixeur plongeant. 
+
+;Étape 3
+Formez des boulettes dans vos mains (si la pâte est trop collante, rajoutez du parmesan râpé ou un tout petit peu de farine). Déposez les boulettes végétariennes sur une plaque de four recouverte de papier sulfurisé. 
+
+;Étape 4
+Enfournez 30 minutes à 180°C. Retournez une ou deux fois durant la cuisson vos boulettes végétariennes. 
+
+!!!Quelques mots sur cette recette
+Ces boulettes se dégustent chaudes ou froides. Pour une version sans gluten, choisissez du pain sans gluten. Astuce originale : choisissez un pain parfumé au curcuma. </pre>
 </div>
 <div created="20210319010511196" modified="20210319012845271" tags="entrée" title="Brick au thon et au poireau">
 <pre>[img width=300px [https://assets.afcdn.com/recipe/20190209/87487_w600.jpg]]
@@ -16070,6 +16273,55 @@ Le beurre clarifié ne permet pas de réaliser un beurre noisette puisqu'il a é
 </div>
 <div created="20210319001604731" modified="20210319001703455" tags="astuce" title="Conseils nutrition">
 <pre>{{||LTg}}</pre>
+</div>
+<div created="20210419151958516" modified="20210419152456215" tags="recette [[plat principal]]" title="Côte à l'os et chutney de poivrons">
+<pre>^^//
+source : https://www.carrefour.be/fr/recettes/barbecue/viande/cote-los-et-chutney-de-poivrons.html
+//^^
+
+[img width=300px [https://www.carrefour.be/content/dam/carrefour/recettes/2021-04/C%C3%B4te-%C3%A0-l%E2%80%99os-chutney-de-poivrons.jpg/_jcr_content/renditions/cq5dam.thumbnail.690.345.jpg]]
+
+''Temps total'' : 65 min
+
+&lt;&lt;&lt;
+Préparation : 40 min
+&lt;br&gt;Repos : -
+&lt;br&gt;Cuisson : 25 min
+&lt;&lt;&lt;
+
+;Ingrédient (4 personnes)
+
+* Côtes à l’os d’environ 1,250 kg
+*  Poivrons rouges 8
+* Petits piments rouges 4
+*  Oignons rouges 2
+* Feuille de laurier 2
+*  Brin de romarin frais, haché 2
+* Cannelle 2 pincée 
+*  Vinaigre balsamique 150 ml.
+* Sucre brun 100 gr
+*  Huile d’olive
+* Beurre
+* Sel
+* Poivre
+
+;Ustensiles
+*
+* 
+* 
+
+
+;Étape 1
+Faites revenir les oignons pelés et émincés avec le laurier et le romarin environ 10 min. Salez, poivrez et saupoudrez de cannelle.
+
+;Étape 2
+Coupez les poivrons et les piments en deux, épépinez- les, retirez les membranes blanches, puis coupez-les en petits morceaux. Ajoutez-les avec le vinaigre balsamique et le sucre brun au mélange d’oignons rouges. Laissez mijoter à feu doux.
+
+;Étape 3
+Dans une poêle bien chaude, faites fondre 1 noix de beurre et 1 filet d’huile d’olive. Salez et poivrez la viande puis saisissez-la brièvement. Laissez-la reposer quelques minutes avant de la servir avec le chutney de poivrons.
+
+!!!Quelques mots sur cette recette
+</pre>
 </div>
 <div created="20210319122513147" modified="20210319122832719" tags="[[plat principal]]" title="Crevettes au curry express">
 <pre>^^//
@@ -16445,7 +16697,51 @@ Servez chaud ou froid.
 
 Pour un diner léger avec une salade, ou en apéritif. Mes enfants aiment beaucoup. J'enveloppe le cylindre d'un film plastique avant de le mettre au congélateur.</pre>
 </div>
-<div created="20210319001434778" modified="20210320173123661" title="Index">
+<div created="20210328202921497" modified="20210330143349592" title="flocons de bonite">
+<pre>Alternative : katsuobushi(meilleur que la bonite), champignons Shiitake , algues kombu, crevettes séchées moulues (sakuraebi)
+
+Si difficiles à trouver, aller voir dans un magasin de nourriture pour animaux - [[les flocons de bonites peuvent être vendus comme friandise pour chat|https://www.reddit.com/r/AskCulinary/comments/6ev179/so_how_do_you_make_dashi_without_konbu_or/]]</pre>
+</div>
+<div created="20210328193802043" modified="20210328194704512" tags="" title="Glace à la banane">
+<pre>^^//
+source : https://www.hervecuisine.com/recette/comment-faire-une-glace-maison-avec-un-ingredient/#
+//^^
+
+[img width=300px [https://www.hervecuisine.com/wp-content/uploads/2015/06/banane5]]
+
+''Temps total'' :4 h 05
+
+&lt;&lt;&lt;
+Préparation : 5 min
+&lt;br&gt;Repos : 4 h
+&lt;br&gt;Cuisson : -
+&lt;&lt;&lt;
+
+;Ingrédients
+* 2 bananes bien mûres/personne
+
+;Ustensiles
+* Couteau
+* Congélateur
+* Récipient allant au congélateur
+
+
+;Étape 1
+Découpez les bananes en lamelles et mettez-les dans un récipient allant au congélateur
+
+;Étape 2
+Sortez les bananes congelées après au moins 4 heures (idéalement une nuit), mettez-les dans un mixeur (Vous ne risquez pas d’abîmer votre robot.. ce sont des petits morceaux donc ça ramolli assez vite)
+
+;Étape 3
+Mixez à fond jusqu’à obtention d’une consistance crémeuse, la glace est prête (ça commence par faire des petits morceaux, un peu granuleux, puis ça se lisse en une texture crémeuse, au bout de 2 ou 3 minutes)
+
+;Étape 4
+Servir, dégustez vite !
+
+!!!Quelques mots sur cette recette
+On peut aussi ajouter de la cannelle. Rajouter un blanc d’œuf pour avoir une glace façon glace italienne. A tester : ajouter des cacaouhètes mixées (ou du beurre de cacahouète)</pre>
+</div>
+<div created="20210319001434778" modified="20210412000114786" title="Index">
 <pre>^^{{stats}}^^
 
 Bienvenue sur [[tiddlycook.github.io|https://tiddlycook.github.io/]]! Dans ce wiki vous trouverez des recettes et des astuces de cuisine. Je m'en sers égallement pour le planning de mes repas !
@@ -16654,6 +16950,68 @@ J'ai longtemps cherché comment faire des nuggets légers et savoureux et après
 <pre>Manger des légumes crus
 </pre>
 </div>
+<div created="20210420162904019" modified="20210420164058849" tags="[[plat principal]]" title="Paksoï grillé, croustillants d’oignons, boulettes veggie et sauce cantonaise">
+<pre>^^//
+source : https://www.carrefour.be/fr/recettes/weekend/legume/paksoi-grille-croustillants-d-oignons-boulettes-veggie-et-sauce-.html
+//^^
+
+[img width=300px [https://www.carrefour.be/content/dam/carrefour/recettes/2021-04/paksoi-grille-croustillants-oignons-boulettes-veggie.jpg/_jcr_content/renditions/cq5dam.thumbnail.690.345.jpg]]
+
+''Temps total'' : 1h30
+
+&lt;&lt;&lt;
+Préparation : 40 min
+&lt;br&gt;Repos : 30 min
+&lt;br&gt;Cuisson : 20 min
+&lt;&lt;&lt;
+
+;Ingrédient (4 personnes)
+
+* Gousse d'ail 1
+* Gingembre frais
+* Piment rouge 1
+* Riz basmati 250 g.
+* Paksoï 500 g.
+* [[Boulettes végétariennes]] 400 g.
+* Bouquet de basilic 1
+* Huile d'arachide
+* Sel
+* Poivre
+
+''Pour la sauce cantonaise''
+
+* Sauce d’huître 2 c.à.s
+* Sauce soja 1 c.à.c
+* Sauce de poisson 1 c.à.c
+* Sucre 2 c.à.c
+* Fécule de maïs 1 c.à.s
+* Eau 6 c.à.s
+* Huile végétale 2 c.à.s
+
+''Pour les croustillants d'oignons''
+
+* Oignons blancs 2
+* Lait 250 ml.
+* Oeuf 1 (ou 2 cs de maizena + 3 cs eau)
+* Farine 150 g.
+* Huile de tournesol 2 c.à.s
+* Sel
+
+;Étape 1
+Pelez les oignons et coupez-les en fines rondelles. Placez-les dans de l’eau glacée pendant 30 min. Pelez la gousse d’ail, pelez et râpez 5 cm de gingembre. Épépinez et émincez finement le piment rouge.
+
+;Étape 2
+Faites cuire le riz selon les indications de l’emballage. Réservez. Mélangez tous les ingrédients de la sauce cantonaise dans un petit poêlon. Faites chauffer à feu doux. Réservez.
+
+;Étape 3
+Coupez la partie verte du paksoï et réservez-la pour une prochaine recette. Coupez les bulbes blancs en deux dans le sens de la longueur. Mélangez l’ail pressé, 2 c à s de gingembre râpé et le piment rouge avec un filet d’huile d’arachide. Badigeonnez le paksoï de cette préparation puis faites revenir dans une sauteuse à feu vif jusqu’à ce qu’il soit al dente et légèrement doré.
+
+;Étape 4
+Préparez les rondelles d’oignons frits : dans un saladier, battez le lait, l’oeuf, la farine, 2 c à s d’huile de tournesol et 1 pincée de sel jusqu’à l’obtention d’une consistance lisse. Faites chauffer un bain d’huile. Égouttez les rondelles d’oignons et séchez-les avec du papier absorbant. Trempez-les dans la pâte puis faites-les frire dans l’huile jusqu’à ce qu’elles soient dorées et croustillantes. Égouttez les sur du papier absorbant et réservez. Faites revenir les boulettes végétariennes dans l’huile. Dressez le riz, le paksoï et les boulettes sur un plat de service. Décorez d’oignons frits et de basilic et accompagnez de sauce cantonaise.
+
+!!!Quelques mots sur cette recette
+</pre>
+</div>
 <div created="20210319124912313" modified="20210319125318205" tags="[[plat principal]]" title="Pizza gaufrée au fromage">
 <pre>^^//
 source : https://www.marmiton.org/recettes/recette_pizza-gaufree-au-fromage_347268.aspx
@@ -16718,10 +17076,11 @@ et de rondelles de mozzarella. Parsemer d'origan.
 Préchauffer le four à 200°C (thermostat 6-7). Déposer sur une plaque recouverte de papier cuisson et enfourner 15 minutes. Servir bien chaud.
 </pre>
 </div>
-<div created="20210319002429433" modified="20210319132452794" tags="" title="Planning repas vendredi 19/3 --&gt; 28/3">
-<pre>* 19/3 : [[Pot-au-feu de poisson]]
+<div created="20210319002429433" modified="20210321200131519" tags="" title="Planning repas vendredi 19/3 --&gt; 28/3">
+<pre>* 19/3 : [[Pot-au-feu de poisson]] ! fait et approuvé
 
-* 20/3 : [[Brick au thon et au poireau]] &amp; [[Pomme de terre au four farcie, champignons, lardons et petits oignons]]
+* 20/3 : [[Brick au thon et au poireau]] &amp; 
+* [[Pomme de terre au four farcie, champignons, lardons et petits oignons]] : fait et approuvé (mais avec du miel la prochaine fois)
 **[[Blondie]]
 
 * 21/3 : [[Moelleux carottes mozzarella]] &amp; [[Soupe crevettes, coco et gingembre]]
@@ -16742,7 +17101,7 @@ Préchauffer le four à 200°C (thermostat 6-7). Déposer sur une plaque recouve
 
 * 28/3 : [[Soufflé à la mozzarella et à l'emmental]] &amp; [[Pizza gaufrée au fromage]]</pre>
 </div>
-<div created="20210319125334222" modified="20210319125644073" tags="[[plat principal]]" title="Pomme de terre au four farcie, champignons, lardons et petits oignons">
+<div created="20210319125334222" modified="20210321200204785" tags="[[plat principal]]" title="Pomme de terre au four farcie, champignons, lardons et petits oignons">
 <pre>^^//
 source : https://www.marmiton.org/recettes/recette_pomme-de-terre-au-four-farcie-champignons-lardons-et-petits-oignons_347190.aspx
 //^^
@@ -16766,6 +17125,7 @@ Préparation : 20 min
 * 1 buche de chèvre
 * 1 filet huile d'olive
 * 1 pincée de poivre
+* miel
 
 ;Étape 1
 Dans une poêle chaude et sans ajouter de matière grasse, faire revenir les allumettes, retirer l'excès de gras si besoin.
@@ -16789,7 +17149,9 @@ Déposer 2/3 rondelles de chèvre. Saler et poivrer à nouveau si besoin, selon 
 Disposer les pommes de terre dans un (ou 2 !) moule à cake. 
 
 ;Étape 8
-Enfourner 15 minutes, le temps que le fromage fonde et gratine. A déguster bien chaud.
+Enfourner 15 minutes, le temps que le fromage fonde et gratine. A déguster bien chaud. 
+
+Mettre un filet de miel durant la cuisson.
 
 !!!Quelques mots sur cette recette
 </pre>
@@ -17573,6 +17935,58 @@ position: absolute;
 <div color="#eecc66" created="20201112231556230" icon="$:/core/images/new-here-button" modified="20210126152430761" title="tags">
 <pre>&lt;div class=&quot;nicelist&quot;&gt;
 &lt;$transclude tiddler=&quot;LTg#&quot;/&gt;</pre>
+</div>
+<div created="20210328202232491" modified="20210328204655512" tags="" title="Takoyaki">
+<pre>^^//
+source : https://www.marmiton.org/recettes/recette_takoyaki_371913.aspx
+//^^
+
+[img width=300px [https://assets.afcdn.com/recipe/20190329/90088_w1024h768c1cx3024cy2016.webp]]
+
+''Temps total'' : 40 min
+
+&lt;&lt;&lt;
+Préparation : 25 min
+&lt;br&gt;Repos : -
+&lt;br&gt;Cuisson : 15 min
+&lt;&lt;&lt;
+
+;Ingrédient (4 personnes)
+* 2 cuillères à soupe de [[gingembre confit]]
+* 200 g de farine
+* 40 ml de lait 
+* [[mayonnaise japonaise]] 
+* poulpe
+* 2 cuillères à soupe de sauce soja 
+* [[flocons de bonite ]]
+* 4 cuillères à [[soupe de nori en paillettes]]
+* 2 oeufs 
+* 600 ml d'eau 
+* huile
+* 2 sachets de [[dashi]] 
+* ciboulette 
+* [[sauce okonomiyaki]] 
+
+;Étape 1
+Dans un grand saladier, mélanger l'eau, le lait, la sauce soja, les oeufs et le dashi. Ajouter la farine et bien mélanger. La pâte doit être assez liquide. 
+
+;Étape 2
+Détailler le poulpe en petits morceaux. Laver et ciseler la ciboulette. 
+
+;Étape 3
+Huiler le moule à takoyaki, planche pouvant aller sur des plaques, avec des empreintes rondes, à défaut, des moules à minis muffins peuvent faire l'affaire. Verser la pâte sur le moule, en remplissant chaque empreinte. 
+
+;Étape 4
+Ajouter les morceaux de poulpes, le gingembre mariné en morceaux et la ciboulette ciselée. Ce n'est pas grave si ça déborde un peu.
+
+;Étape 5
+Déposer la plaque sur le feux et retourner régulièrement les takoyaki à l'aide de 2 baguettes, une dans chaque main, pour qu'ils soient bien dorés et bien régulier. Ils prennent forme au fur et à mesure de la cuisson. 
+
+;Étape 6
+Lorsqu'ils sont cuits, les arroser de mayonaise japonaise, de sauce okonomiyaki et parsemer de flocons de bonite et de nori en paillettes. Déguster bien chaud.
+
+!!!Quelques mots sur cette recette
+Voir aussi https://youtu.be/Ml5AAM_O6lE</pre>
 </div>
 <div created="20210304002738074" creator="user" modified="20210305113045270" modifier="user" tags="Tiddlytask" title="task-control">
 <pre>&lt;$transclude tiddler=&quot;LTg&quot;/&gt;</pre>
